@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Code2,
   Settings,
@@ -17,6 +15,7 @@ import {
   Target,
 } from "lucide-react"
 import Link from "next/link"
+import { ContactForm } from "@/components/contact-form"
 
 export default function HomePage() {
   return (
@@ -299,15 +298,15 @@ export default function HomePage() {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <Mail className="h-5 w-5 text-blue-400" />
-                    <span>contacto@soft3ch.com</span>
+                    <span>soft3ch.dev@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone className="h-5 w-5 text-blue-400" />
-                    <span>+54 11 1234-5678</span>
+                    <span>+543756451433</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-5 w-5 text-blue-400" />
-                    <span>Buenos Aires, Argentina</span>
+                    <span>Corrientes, Argentina</span>
                   </div>
                 </div>
 
@@ -318,50 +317,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <Card className="bg-white/5 border-white/10">
-                <CardHeader>
-                  <CardTitle className="text-white">Envíanos un mensaje</CardTitle>
-                  <CardDescription className="text-slate-300">Te responderemos en menos de 24 horas</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Nombre</label>
-                      <Input
-                        placeholder="Tu nombre"
-                        className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Email</label>
-                      <Input
-                        type="email"
-                        placeholder="tu@email.com"
-                        className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Empresa</label>
-                    <Input
-                      placeholder="Nombre de tu empresa"
-                      className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Mensaje</label>
-                    <Textarea
-                      placeholder="Cuéntanos sobre tu proyecto..."
-                      rows={4}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
-                    />
-                  </div>
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                    Enviar mensaje
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
+              <ContactForm />
             </div>
           </div>
         </div>
@@ -379,7 +335,7 @@ export default function HomePage() {
                 soft3ch
               </span>
             </div>
-            <div className="text-slate-400 text-sm">© 2024 Soft3ch. Todos los derechos reservados.</div>
+            <div className="text-slate-400 text-sm">© 2025 Soft3ch. Todos los derechos reservados.</div>
           </div>
         </div>
       </footer>
