@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Inventario - ERP System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-background-dark/50 px-10 py-3 bg-white dark:bg-background-dark/20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#111418] dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-4xl">
+                            waves
+                            </span>
+</div>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">ERP System</h2>
+</div>
+</div>
+<div class="flex flex-1 justify-center gap-8">
+<div class="flex items-center gap-9">
+<a class="text-[#111418] dark:text-white text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-primary dark:text-primary text-sm font-bold leading-normal" href="#">Inventario</a>
+<a class="text-[#111418] dark:text-white text-sm font-medium leading-normal" href="#">Ventas</a>
+<a class="text-[#111418] dark:text-white text-sm font-medium leading-normal" href="#">Compras</a>
+<a class="text-[#111418] dark:text-white text-sm font-medium leading-normal" href="#">Reportes</a>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-transparent text-[#111418] dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-black/5 dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-xl">
+                            notifications
+                        </span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-transparent text-[#111418] dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-black/5 dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-xl">
+                            dark_mode
+                        </span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgUYN9m7YqJT9Xt5OwRt2lISW3Kfrv7qvHV-51le3fxEj4DviqKXrtbvfPfCZDkIKKmW-y_9Zu0uxKik5voKHMDfArnlV4DDb9BeTocL4f4gLJXYCXzwgBGWDgnuT50kfDPj5uhBR0qgMyUV3E51Qz7NRIxoDVR88KwChTJrPXRoq87r6Ym5ZObGUI57omUTTaQZxOLaerL1cNxyM-k_Yq5Kywe-acb881FDWESwlcOq7XeCk9CSRUdB3KKnaPQ0u3rVuQcODHTOg");'></div>
+</div>
+</header>
+<main class="flex-1 px-4 sm:px-6 lg:px-8 py-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<p class="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Gestión de Inventario</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white gap-2 pl-4 text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+<span class="material-symbols-outlined text-2xl">
+                                add_circle
+                            </span>
+<span class="truncate">Añadir Nuevo Producto</span>
+</button>
+</div>
+<div class="bg-white dark:bg-background-dark/20 rounded-xl p-4 shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-4">
+<div class="md:col-span-8">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#617589] dark:text-gray-300 flex border-none bg-[#f0f2f4] dark:bg-background-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">
+                                                search
+                                            </span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-[#f0f2f4] dark:bg-background-dark h-full placeholder:text-[#617589] dark:placeholder:text-gray-400 px-4 text-base font-normal leading-normal" placeholder="Buscar por nombre, SKU..." value=""/>
+</div>
+</label>
+</div>
+<div class="md:col-span-4 flex items-center gap-3">
+<button class="flex h-12 w-full items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f4] dark:bg-background-dark px-4">
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">Filtros Avanzados</p>
+<span class="material-symbols-outlined text-[#111418] dark:text-white">
+                                        filter_list
+                                    </span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-[#f0f2f4] dark:border-white/10">
+<tr>
+<th class="p-4 text-sm font-semibold text-[#666] dark:text-gray-400">Imagen</th>
+<th class="p-4 text-sm font-semibold text-[#666] dark:text-gray-400">Nombre del Producto</th>
+<th class="p-4 text-sm font-semibold text-[#666] dark:text-gray-400">SKU</th>
+<th class="p-4 text-sm font-semibold text-[#666] dark:text-gray-400">Categoría</th>
+<th class="p-4 text-sm font-semibold text-[#666] dark:text-gray-400">Stock Actual</th>
+<th class="p-4 text-sm font-semibold text-[#666] dark:text-gray-400">Ubicación</th>
+<th class="p-4 text-sm font-semibold text-[#666] dark:text-gray-400">Precio</th>
+<th class="p-4 text-sm font-semibold text-[#666] dark:text-gray-400 text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f0f2f4] dark:divide-white/10">
+<tr class="hover:bg-[#f0f2f4]/50 dark:hover:bg-white/5">
+<td class="p-4"><div class="size-12 rounded-lg bg-cover bg-center" data-alt="Red running shoe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsW_aXeES0mbW1RJh4GEzmCWMFIv2c7Irfz73BaAYvAspxc9Xuef1OFF-fUSmGDYDqpJKGgskfA2NqUyRY7SwznkXMJ7OAmOrOORqqIkV7KhBUr-apjFXHDz4sRxC_QBYWuO8V4mxdLE2gFz4rFPsVR9OQBmtvHoTrZCBpqfjfxoMKilFnR82fljAd109ZUUEnbe4aZJVS4ryB0GYXMtb3e7rVlRq0UkX2QFG8tR9GDPtrXCJQnCstRZWqJef3a3Lv8eGWFjSWJ3I')"></div></td>
+<td class="p-4 font-medium text-[#333] dark:text-gray-200">Zapatillas Deportivas</td>
+<td class="p-4 text-[#666] dark:text-gray-400">NK-RUN-001</td>
+<td class="p-4 text-[#666] dark:text-gray-400">Calzado</td>
+<td class="p-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">En Stock (120)</span></td>
+<td class="p-4 text-[#666] dark:text-gray-400">Almacén A, Pasillo 3</td>
+<td class="p-4 text-[#333] dark:text-gray-200">$89.99</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-[#666] dark:text-gray-400" title="Ver Historial"><span class="material-symbols-outlined">history</span></button>
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-[#666] dark:text-gray-400" title="Editar"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 rounded-full hover:bg-red-100 dark:hover:bg-red-900/50 text-red-500" title="Eliminar"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-[#f0f2f4]/50 dark:hover:bg-white/5">
+<td class="p-4"><div class="size-12 rounded-lg bg-cover bg-center" data-alt="Classic wrist watch" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuANTiDNufiJPoehR09nGiM9Qx04uLyFZP2cOLBZWYZZku5OkWPcT7T_zydjRgWrJcnPM1_zHiM1CYB12FIAW6AtKo524VNKhGD7KtU74nMm_0gEpCNlo1xh7JRdwMAV-Y3COAE2FzzzuAdvI1CYii5OUeOVPvOa5XEQxIOhpC_kMUkuI_Lo7Qz-DZImy081HGazyYbPvTq_njL5ycPpQ8fSqRGoq79_1Bg_6leyYVbvukcitRdVx02PDmWg7zJ0WN7Iwk31w-TOiyY')"></div></td>
+<td class="p-4 font-medium text-[#333] dark:text-gray-200">Reloj Clásico</td>
+<td class="p-4 text-[#666] dark:text-gray-400">WTCH-CLS-05</td>
+<td class="p-4 text-[#666] dark:text-gray-400">Accesorios</td>
+<td class="p-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Poco Stock (8)</span></td>
+<td class="p-4 text-[#666] dark:text-gray-400">Almacén B, Estante 1</td>
+<td class="p-4 text-[#333] dark:text-gray-200">$199.50</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-[#666] dark:text-gray-400" title="Ver Historial"><span class="material-symbols-outlined">history</span></button>
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-[#666] dark:text-gray-400" title="Editar"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 rounded-full hover:bg-red-100 dark:hover:bg-red-900/50 text-red-500" title="Eliminar"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-[#f0f2f4]/50 dark:hover:bg-white/5">
+<td class="p-4"><div class="size-12 rounded-lg bg-cover bg-center" data-alt="Wireless headphones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnIq_6ocLNmPk4mEjtwnfcvjv5-LgteK_Z1sTKj34VKTaorxbGgJbWGOYC_s3FSWsUWCEhWF2AJIQLkQSQBnQiXD3pb3rCaRdn1EUL-e9VG1QClW2XWrNXDZu7JmuGVPg53BINOZHw_f_tA-G622dHbyO6KfubaHNSFEoeggEfyxJec8ecZzMn_9G6Wnc20EMLySQZwwWHXCWrFExw211QCvPeW-Yj2LMb5E-6PJKqCwP07cXiwsUg0IbQChZ445no6UxyU5t9Zc8')"></div></td>
+<td class="p-4 font-medium text-[#333] dark:text-gray-200">Auriculares Inalámbricos</td>
+<td class="p-4 text-[#666] dark:text-gray-400">HDPH-WL-72</td>
+<td class="p-4 text-[#666] dark:text-gray-400">Electrónica</td>
+<td class="p-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">En Stock (55)</span></td>
+<td class="p-4 text-[#666] dark:text-gray-400">Almacén C, Sección 2</td>
+<td class="p-4 text-[#333] dark:text-gray-200">$120.00</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-[#666] dark:text-gray-400" title="Ver Historial"><span class="material-symbols-outlined">history</span></button>
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-[#666] dark:text-gray-400" title="Editar"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 rounded-full hover:bg-red-100 dark:hover:bg-red-900/50 text-red-500" title="Eliminar"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-[#f0f2f4]/50 dark:hover:bg-white/5">
+<td class="p-4"><div class="size-12 rounded-lg bg-cover bg-center" data-alt="Smartwatch" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDV4td8ogUE8_4GNRwUeFoXn0hSxx5cvDw-HHcpTogQmq52UxmWoDCwFTfimo0XTAoNAcQ96afZv-spqONNRzVPkjAbvrt99NWNqqKHa9zLLIctEkFqEd8NhcAeU2Z6-RkI8dAq3emnasIfpCI5Jv3L-A9mYNsJOhgRBNglDIFVdVdhtfyX5mGOJMRMIPMSue1QtZiyCXzdNN_hIRtjiwQaO-cJm_pK8ZK6WJxct9vxxWWw-B2_eLi067jFLQloONw3jc_CN1mbwgY')"></div></td>
+<td class="p-4 font-medium text-[#333] dark:text-gray-200">Smartwatch Pro</td>
+<td class="p-4 text-[#666] dark:text-gray-400">SW-PRO-01</td>
+<td class="p-4 text-[#666] dark:text-gray-400">Electrónica</td>
+<td class="p-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">Bajo Stock (2)</span></td>
+<td class="p-4 text-[#666] dark:text-gray-400">Almacén C, Sección 1</td>
+<td class="p-4 text-[#333] dark:text-gray-200">$250.00</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-[#666] dark:text-gray-400" title="Ver Historial"><span class="material-symbols-outlined">history</span></button>
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-[#666] dark:text-gray-400" title="Editar"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 rounded-full hover:bg-red-100 dark:hover:bg-red-900/50 text-red-500" title="Eliminar"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between p-4 border-t border-[#f0f2f4] dark:border-white/10">
+<p class="text-sm text-[#666] dark:text-gray-400">Mostrando 1-4 de 25 resultados</p>
+<div class="flex gap-1">
+<button class="px-3 py-1 rounded-md text-sm font-medium text-[#666] dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">Anterior</button>
+<button class="px-3 py-1 rounded-md text-sm font-medium bg-primary text-white">1</button>
+<button class="px-3 py-1 rounded-md text-sm font-medium text-[#666] dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">2</button>
+<button class="px-3 py-1 rounded-md text-sm font-medium text-[#666] dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">3</button>
+<span class="px-3 py-1 text-sm text-[#666] dark:text-gray-400">...</span>
+<button class="px-3 py-1 rounded-md text-sm font-medium text-[#666] dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">7</button>
+<button class="px-3 py-1 rounded-md text-sm font-medium text-[#666] dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">Siguiente</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

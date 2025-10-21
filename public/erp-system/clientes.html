@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Clientes (CRM)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1173d4",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-white dark:bg-[#101922] border-r border-gray-200 dark:border-gray-800 flex flex-col">
+<div class="p-4 border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Avatar de Juan Pérez" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcMqfFk7Vj6yij05_yZRjoNmlvnnH7r5t42XwzwiCZj5fWZBCNXUBFv653YsYyIOxr_Au4dIChUkLoiwIRMnJaIRe4S4OA2B2_-vw03fJe6obxqfmrDedLQidNnEbOCizhf7VHG3jiMrSmA18r88wun9qCnDY_WPvy_O2Xu1I4OSxjSJhukpFrX3EfkehBWKSgtlpPbI-jNQqoOXRzbvqZd3TpzvpjRDUopv1pwG8a5LQ4cdL8vZQ9OjCSqiXGClWv7NL3JpF55kA");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#111418] dark:text-white text-base font-medium leading-normal">Juan Pérez</h1>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Administrador</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 p-4">
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#617589] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium">Clientes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#617589] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<p class="text-sm font-medium">Facturación</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#617589] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="text-sm font-medium">Informes</p>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-gray-200 dark:border-gray-800">
+<button class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 dark:hover:bg-gray-700">
+<span class="truncate">Cerrar Sesión</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<div class="flex flex-col gap-6">
+<div class="flex flex-wrap gap-2">
+<a class="text-[#617589] dark:text-gray-400 text-base font-medium leading-normal hover:text-primary" href="#">Inicio</a>
+<span class="text-[#617589] dark:text-gray-400 text-base font-medium leading-normal">/</span>
+<a class="text-[#617589] dark:text-gray-400 text-base font-medium leading-normal hover:text-primary" href="#">CRM</a>
+<span class="text-[#617589] dark:text-gray-400 text-base font-medium leading-normal">/</span>
+<span class="text-[#111418] dark:text-white text-base font-medium leading-normal">Clientes</span>
+</div>
+<div class="flex flex-wrap justify-between items-center gap-4">
+<h1 class="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Gestión de Clientes (CRM)</h1>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white gap-2 pl-5 text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">Añadir Nuevo Cliente</span>
+</button>
+</div>
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex-1">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#617589] flex bg-white dark:bg-[#101922] items-center justify-center pl-4 rounded-l-lg border border-gray-200 dark:border-gray-700 border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#101922] h-full placeholder:text-[#617589] px-4 text-base font-normal leading-normal" placeholder="Buscar por nombre o empresa" value=""/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center h-12 px-4 rounded-lg bg-white dark:bg-[#101922] border border-gray-200 dark:border-gray-700 text-[#333333] dark:text-white gap-2 text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined">filter_list</span>
+<span>Filtros</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-[#101922] rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+<tr>
+<th class="p-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Nombre del Cliente</th>
+<th class="p-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Empresa</th>
+<th class="p-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Correo Electrónico</th>
+<th class="p-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Teléfono</th>
+<th class="p-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Última Actividad</th>
+<th class="p-4 text-sm font-semibold text-gray-600 dark:text-gray-300 text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-900/50">
+<td class="p-4 text-sm text-gray-800 dark:text-gray-200 font-medium">Ana Torres</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">Innovatec Solutions</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">ana.torres@innovatec.com</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">+34 612 345 678</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">Hace 2 días</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-900/50">
+<td class="p-4 text-sm text-gray-800 dark:text-gray-200 font-medium">Carlos Ruiz</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">Global Services</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">carlos.ruiz@globalservices.es</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">+34 698 765 432</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">Hace 1 semana</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-900/50">
+<td class="p-4 text-sm text-gray-800 dark:text-gray-200 font-medium">Luisa Fernández</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">Creativos Digitales</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">luisa.f@creativos.io</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">+34 623 456 789</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">Hace 3 semanas</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-900/50">
+<td class="p-4 text-sm text-gray-800 dark:text-gray-200 font-medium">Javier Morales</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">Consultores Tech</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">j.morales@consultorestech.com</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">+34 634 567 890</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">Hace 1 mes</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-900/50">
+<td class="p-4 text-sm text-gray-800 dark:text-gray-200 font-medium">Sofia Vega</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">Marketing Pro</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">sofia.vega@marketingpro.net</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">+34 645 678 901</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">Hace 2 meses</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex justify-between items-center p-4 border-t border-gray-200 dark:border-gray-800">
+<span class="text-sm text-gray-600 dark:text-gray-400">Mostrando 1 a 5 de 25 resultados</span>
+<div class="flex gap-1">
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="px-4 py-2 rounded-md text-sm font-medium bg-primary/10 text-primary">1</button>
+<button class="px-4 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">2</button>
+<button class="px-4 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">3</button>
+<span class="px-2 py-2">...</span>
+<button class="px-4 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">5</button>
+<button class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

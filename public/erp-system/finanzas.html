@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ERP - Gestión Financiera</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1A3A6D",
+            "background-light": "#F4F6F8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex h-full grow flex-row">
+<aside class="flex flex-col gap-4 p-4 bg-white dark:bg-background-dark border-r border-[#dbe0e6] dark:border-gray-700 w-64">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="ERP Corp logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7ISAcfzVTeKaUpfdFB24spf2nder5LAQm_KE_phOjmkvYIagG2zK69KEEd69x2thEgyj2O7GFSGZeH6eKvlG0wMCzec36pmjjZP8IFZCjHYfHoA74aXSni0LUytdKUt_F3WRfscYUen0aJEP0A2rFBhIF8Ykd41iZKOvKZ7u8aF9kg5vUw7sRrAwIjJbIkwBibcV5lnj99QDYqr5tQHmMQE5GCGQkrjIJEBAVTPzES94TXuHCbaEbfcoGffRSNwN38UzaaQVURu0");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#111418] dark:text-white text-base font-medium leading-normal">ERP Corp</h1>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">admin@erpcorp.com</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-[#111418] dark:text-white">dashboard</span>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30" href="#">
+<span class="material-symbols-outlined text-primary dark:text-primary">account_balance_wallet</span>
+<p class="text-primary dark:text-primary text-sm font-medium leading-normal">Gestión Financiera</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-[#111418] dark:text-white">groups</span>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">Recursos Humanos</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-[#111418] dark:text-white">inventory_2</span>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">Inventario</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-[#111418] dark:text-white">settings</span>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">Configuración</p>
+</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-[#111418] dark:text-white">help_outline</span>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">Ayuda</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-[#111418] dark:text-white">logout</span>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">Cerrar Sesión</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-6 lg:p-8">
+<div class="flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<h1 class="text-2xl font-bold text-primary dark:text-white">Gestión Financiera</h1>
+<div class="flex gap-4 items-center">
+<div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
+<div class="flex items-center p-1 justify-between bg-white dark:bg-gray-800 rounded-lg border border-[#dbe0e6] dark:border-gray-700">
+<button>
+<div class="text-[#111418] dark:text-white flex size-10 items-center justify-center" data-icon="CaretLeft" data-size="18px" data-weight="regular">
+<span class="material-symbols-outlined">chevron_left</span>
+</div>
+</button>
+<p class="text-[#111418] dark:text-white text-sm font-bold leading-tight flex-1 text-center">Junio 2024</p>
+<button>
+<div class="text-[#111418] dark:text-white flex size-10 items-center justify-center" data-icon="CaretRight" data-size="18px" data-weight="regular">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</button>
+</div>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">Nuevo Asiento</span>
+</button>
+</div>
+</div>
+<div>
+<div class="flex border-b border-[#dbe0e6] dark:border-gray-700 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary pb-[13px] pt-4" href="#">
+<p class="text-primary text-sm font-bold leading-normal tracking-[0.015em]">Contabilidad General</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#617589] dark:text-gray-400 pb-[13px] pt-4 hover:text-primary dark:hover:text-white hover:border-b-primary/50" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Facturación</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#617589] dark:text-gray-400 pb-[13px] pt-4 hover:text-primary dark:hover:text-white hover:border-b-primary/50" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Cuentas por Pagar</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#617589] dark:text-gray-400 pb-[13px] pt-4 hover:text-primary dark:hover:text-white hover:border-b-primary/50" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Cuentas por Cobrar</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#617589] dark:text-gray-400 pb-[13px] pt-4 hover:text-primary dark:hover:text-white hover:border-b-primary/50" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Reportes</p>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#dbe0e6] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal">Flujo de Caja</p>
+<p class="text-[#111418] dark:text-white tracking-light text-2xl font-bold leading-tight">$45,231.89</p>
+<div class="flex items-center text-[#28A745]">
+<span class="material-symbols-outlined text-base">arrow_upward</span>
+<p class="text-base font-medium leading-normal">+2.5%</p>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#dbe0e6] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal">Saldo Total</p>
+<p class="text-[#111418] dark:text-white tracking-light text-2xl font-bold leading-tight">$124,560.00</p>
+<div class="flex items-center text-[#28A745]">
+<span class="material-symbols-outlined text-base">arrow_upward</span>
+<p class="text-base font-medium leading-normal">+1.8%</p>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#dbe0e6] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal">Facturación del Mes</p>
+<p class="text-[#111418] dark:text-white tracking-light text-2xl font-bold leading-tight">$25,800.00</p>
+<div class="flex items-center text-[#DC3545]">
+<span class="material-symbols-outlined text-base">arrow_downward</span>
+<p class="text-base font-medium leading-normal">-0.5%</p>
+</div>
+</div>
+</div>
+<div class="px-4 py-3 @container bg-white dark:bg-gray-800 rounded-xl border border-[#dbe0e6] dark:border-gray-700">
+<div class="flex overflow-hidden">
+<table class="flex-1">
+<thead>
+<tr class="">
+<th class="px-4 py-3 text-left text-[#111418] dark:text-white w-1/5 text-sm font-medium leading-normal">Fecha</th>
+<th class="px-4 py-3 text-left text-[#111418] dark:text-white w-2/5 text-sm font-medium leading-normal">Descripción</th>
+<th class="px-4 py-3 text-left text-[#111418] dark:text-white w-1/5 text-sm font-medium leading-normal">Débito</th>
+<th class="px-4 py-3 text-left text-[#111418] dark:text-white w-1/5 text-sm font-medium leading-normal">Crédito</th>
+<th class="px-4 py-3 text-left text-[#111418] dark:text-white w-1/5 text-sm font-medium leading-normal">Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-t-[#dbe0e6] dark:border-gray-700">
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">2024-06-12</td>
+<td class="h-[72px] px-4 py-2 text-[#111418] dark:text-white text-sm font-normal leading-normal">Venta de productos a cliente A</td>
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">$2,500.00</td>
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal"></td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Completado</span>
+</td>
+</tr>
+<tr class="border-t border-t-[#dbe0e6] dark:border-gray-700">
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">2024-06-11</td>
+<td class="h-[72px] px-4 py-2 text-[#111418] dark:text-white text-sm font-normal leading-normal">Pago de nómina</td>
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal"></td>
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">$5,000.00</td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Completado</span>
+</td>
+</tr>
+<tr class="border-t border-t-[#dbe0e6] dark:border-gray-700">
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">2024-06-10</td>
+<td class="h-[72px] px-4 py-2 text-[#111418] dark:text-white text-sm font-normal leading-normal">Compra de suministros de oficina</td>
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal"></td>
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">$350.00</td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">Pendiente</span>
+</td>
+</tr>
+<tr class="border-t border-t-[#dbe0e6] dark:border-gray-700">
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">2024-06-09</td>
+<td class="h-[72px] px-4 py-2 text-[#111418] dark:text-white text-sm font-normal leading-normal">Ingreso por servicios de consultoría</td>
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">$3,000.00</td>
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal"></td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Completado</span>
+</td>
+</tr>
+<tr class="border-t border-t-[#dbe0e6] dark:border-gray-700">
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">2024-06-08</td>
+<td class="h-[72px] px-4 py-2 text-[#111418] dark:text-white text-sm font-normal leading-normal">Pago de factura de proveedor B</td>
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal"></td>
+<td class="h-[72px] px-4 py-2 text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">$1,200.00</td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300">Vencido</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

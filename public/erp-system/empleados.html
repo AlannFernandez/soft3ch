@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Empleados</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 bg-white dark:bg-background-dark dark:border-r dark:border-gray-700 flex flex-col p-4 border-r">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl">
+                        shield
+                    </span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold text-gray-800 dark:text-white">Plataforma ERP</h1>
+<p class="text-sm text-gray-500 dark:text-gray-400">Módulo de Empleados</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-primary text-2xl">
+                        groups
+                    </span>
+<p class="text-sm font-medium text-primary">Lista de Empleados</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-2xl">
+                        event_note
+                    </span>
+<p class="text-sm font-medium text-gray-700 dark:text-gray-200">Asistencia</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-2xl">
+                        assessment
+                    </span>
+<p class="text-sm font-medium text-gray-700 dark:text-gray-200">Reportes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-2xl">
+                        settings
+                    </span>
+<p class="text-sm font-medium text-gray-700 dark:text-gray-200">Configuración</p>
+</a>
+</nav>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] mt-4 gap-2">
+<span class="material-symbols-outlined text-white text-xl">
+                    add
+                </span>
+<span class="truncate">Añadir Empleado</span>
+</button>
+</aside>
+<div class="flex-1 flex flex-col overflow-hidden">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b bg-white dark:bg-background-dark dark:border-gray-700 px-8 py-3">
+<div class="flex items-center gap-8">
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-gray-500 flex border-none bg-gray-100 dark:bg-gray-800 items-center justify-center pl-3 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">
+                                    search
+                                </span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-800 dark:text-white focus:outline-0 focus:ring-0 border-none bg-gray-100 dark:bg-gray-800 focus:border-none h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Buscar empleado..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined">
+                            notifications
+                        </span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined">
+                            settings
+                        </span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPjewlie8Gb_ywNXGUrw5XyjYA8bzI096kIeNZe4unkENB0NCz84o4GTEC7cgVXIeBSE1V_at7jbXye28PQLE5oakENHUJ84vCY266eE1zmnQHjF1aCNhlAq8vQ8OG9UR1ojPy8djWe_dniGElGCSoQUHNcZWwBg-3s26NrslYE1zov6kfk37WnT3r_xAAoUoQGnrPNqYklEbbF-kqqPrEyJYIEpiWQgpCUrirmGltLLL2-XV-BPFeEFVLw0xrsT3kS2mDZOl3PGM");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-8">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between gap-3 mb-6">
+<div class="flex min-w-72 flex-col gap-2">
+<p class="text-gray-800 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Gestión de Empleados</p>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Administra la información del personal, incluyendo datos personales, roles, salarios y más.</p>
+</div>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-gray-600 dark:text-gray-300 text-base font-medium leading-normal">Total de Empleados</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight">150</p>
+<p class="text-green-600 dark:text-green-400 text-sm font-medium leading-normal">+5%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-gray-600 dark:text-gray-300 text-base font-medium leading-normal">Departamentos</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight">12</p>
+<p class="text-green-600 dark:text-green-400 text-sm font-medium leading-normal">+1 este mes</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-gray-600 dark:text-gray-300 text-base font-medium leading-normal">Promedio de Antigüedad</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight">3.5 años</p>
+<p class="text-green-600 dark:text-green-400 text-sm font-medium leading-normal">+0.2 años</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-gray-600 dark:text-gray-300 text-base font-medium leading-normal">Próximos Cumpleaños</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight">5</p>
+<p class="text-gray-400 text-sm font-medium leading-normal">En los próximos 7 días</p>
+</div>
+</div>
+<!-- Employees Table -->
+<div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+<!-- ToolBar -->
+<div class="flex justify-between items-center gap-2 px-4 py-3 border-b dark:border-gray-700">
+<div class="flex gap-2">
+<button class="p-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined">swap_vert</span>
+</button>
+</div>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
+<span class="material-symbols-outlined text-white" style="font-size:20px;">add</span>
+<span class="truncate">Añadir Empleado</span>
+</button>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+<tr>
+<th class="px-6 py-3" scope="col">Nombre Completo</th>
+<th class="px-6 py-3" scope="col">ID</th>
+<th class="px-6 py-3" scope="col">Cargo</th>
+<th class="px-6 py-3" scope="col">Departamento</th>
+<th class="px-6 py-3" scope="col">Estado</th>
+<th class="px-6 py-3" scope="col">
+<span class="sr-only">Acciones</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex items-center gap-3" scope="row">
+<img alt="Avatar de Ana García" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGC_BVblswbfHV3VlljIHAIMYSsuOhs7egT3FnhUQYk6qQ9g8bBB-kvNhuqMt2gq6Dnde-kUHKRuC_Avr7m_nzSNT696tusIF76Efbl0T7qJMt-CJ0kEgVZ9826VUlORnt4lF_zGRFk6eG_bS8O2ZAQyGdMZ5ZiHIZo_O5Yo44rXZn61GR4jPeMmXbJeWf55U6PcITeC8NJVBQSlc6TtWvsdr736I8AkuokSUwufCmmwK_L40ZeTYonecTp_sqWc_dy1gwOBDeCMM"/>
+                                        Ana García
+                                    </th>
+<td class="px-6 py-4">EMP-001</td>
+<td class="px-6 py-4">Desarrolladora Frontend</td>
+<td class="px-6 py-4">Tecnología</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                                            Activo
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="p-2 text-red-500 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/50"><span class="material-symbols-outlined text-lg">archive</span></button>
+</td>
+</tr>
+<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex items-center gap-3" scope="row">
+<img alt="Avatar de Carlos Rodriguez" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlxel0h2s2zrdrZ3N9MuISyfrqbhqASm1enp6ctmCOe0TruPKOH_vLvhOF-ArWNyWe5Y9Zpl6GV8fKOEwjSFKpZYDL2Wpw5FI0-eiJ2wSTkDzC5Cm9bFDDLwx51ea3X4Im38zZ8EBZsGgHQXYs5Y9eHBI-RlLShrsxvyv2xf4dVE94dtjPr6Uw8xX6YbCAhL80rjeaz-ZcsgK6re554F2E45kWCD1jfUS910HW6y4We4l362Qdrx-uPuX_MlSJO2QEfAKOzn0OFLE"/>
+                                        Carlos Rodriguez
+                                    </th>
+<td class="px-6 py-4">EMP-002</td>
+<td class="px-6 py-4">Gerente de Proyectos</td>
+<td class="px-6 py-4">Gestión</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                                            Activo
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="p-2 text-red-500 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/50"><span class="material-symbols-outlined text-lg">archive</span></button>
+</td>
+</tr>
+<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex items-center gap-3" scope="row">
+<img alt="Avatar de María López" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB6vuw7MUbHg7kK4gu4e-9DLjVN-E4hnEC-ATjiSZ9fOV-XPsQ6xGflFsm7IPYsjsnioKltFn4BPW-8k9UoRRxNSzlGLU4mn41lAQ8Qr8QwrmLYeW29m0I0Hr_PzYnjJWJWl3mGM0DClLvTolBiYAr_9QBc42GZJNDVsjPS_hNNjWYl15VQKus3ysVyRPnpzc7S8cgSQ2tf_Yi6UzwoTB76Se4S-xWM80--zqT2XmU6Gc0ypK0-h4GZeUiEr2QVOhmxAtMwofOE2k"/>
+                                        María López
+                                    </th>
+<td class="px-6 py-4">EMP-003</td>
+<td class="px-6 py-4">Diseñadora UX/UI</td>
+<td class="px-6 py-4">Diseño</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300">
+                                            Inactivo
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="p-2 text-green-500 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/50"><span class="material-symbols-outlined text-lg">unarchive</span></button>
+</td>
+</tr>
+<tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex items-center gap-3" scope="row">
+<img alt="Avatar de Juan Martinez" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_6Gneph5xhTePPbjCOzu8-zs-qz681ibrw_AadviQhg4Fs29s0tdumC6lGmLMBxwpkdgxADfaMK7NJIMUpEoh6ZdGnwQqIbOpFSrUGsIxVZzMpCEKqw9HsUR9OsxfBcocLS4tnmmdPbgGu7z4dzg--QDCMYzOT_dn6eLaXBG0r9SEwvIKqNRw-Aft2_2jXQoJI3k7Ugq_TgEKnS40eJcr4aldMJfMi_dfuJrNjFxgPYgIqoDWPJqCh8YCDQDUrs8-rj0JTRuxUME"/>
+                                        Juan Martinez
+                                    </th>
+<td class="px-6 py-4">EMP-004</td>
+<td class="px-6 py-4">Analista de Datos</td>
+<td class="px-6 py-4">Inteligencia de Negocio</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                                            Activo
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="p-2 text-red-500 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/50"><span class="material-symbols-outlined text-lg">archive</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

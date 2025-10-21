@@ -181,6 +181,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+              <Link href="/erp-system/panel.html" className="group block">
               <div className="aspect-video bg-gradient-to-br from-blue-400 to-purple-500 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                 <div className="absolute bottom-4 left-4 text-white">
@@ -193,9 +194,11 @@ export default function HomePage() {
                   Plataforma integral para la gestión de recursos empresariales con módulos personalizados.
                 </CardDescription>
               </CardHeader>
+              </Link>
             </Card>
 
             <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+              <Link href="/analytics/dashboard.html" className="group block">
               <div className="aspect-video bg-gradient-to-br from-green-400 to-blue-500 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                 <div className="absolute bottom-4 left-4 text-white">
@@ -208,6 +211,7 @@ export default function HomePage() {
                   Herramienta de visualización de datos en tiempo real para toma de decisiones estratégicas.
                 </CardDescription>
               </CardHeader>
+              </Link>
             </Card>
 
             <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
