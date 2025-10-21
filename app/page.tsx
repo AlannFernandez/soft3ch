@@ -224,6 +224,25 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
             </Card>
+
+             <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+              <Link href="/real-state/home.html" className="group block">
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
+                  <div className="aspect-video bg-gradient-to-br from-purple-400 to-pink-500 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <Users className="h-8 w-8 mb-2" />
+                    </div>
+                  </div>
+                  <CardHeader>
+                    <CardTitle>Real Estate</CardTitle>
+                    <CardDescription>
+                      Aplicación móvil para gestión de equipos y comunicación interna empresarial.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </Card>
           </div>
 
           <div className="text-center mt-12">
