@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Real Estate - Detalle de Propiedad</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00A7B5",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#101f22",
+                        "text-primary": "#2D3748",
+                        "accent": "#48BB78",
+                        "border-light": "#E2E8F0"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="w-full bg-background-light dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-20 border-b border-border-light">
+<div class="flex items-center justify-between whitespace-nowrap px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<svg class="h-8 w-8" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z"></path>
+<path clip-rule="evenodd" d="M39.998 12.236C39.9944 12.2537 39.9875 12.2845 39.9748 12.3294C39.9436 12.4399 39.8949 12.5741 39.8346 12.7175C39.8168 12.7597 39.7989 12.8007 39.7813 12.8398C38.5103 13.7113 35.9788 14.9393 33.7095 15.4811C30.9875 16.131 27.6413 16.5217 24 16.5217C20.3587 16.5217 17.0125 16.131 14.2905 15.4811C12.0012 14.9346 9.44505 13.6897 8.18538 12.8168C8.17384 12.7925 8.16216 12.767 8.15052 12.7408C8.09919 12.6249 8.05721 12.5114 8.02977 12.411C8.00356 12.3152 8.00039 12.2667 8.00004 12.2612C8.00004 12.261 8 12.2607 8.00004 12.2612C8.00004 12.2359 8.0104 11.9233 8.68485 11.3686C9.34546 10.8254 10.4222 10.2469 11.9291 9.72276C14.9242 8.68098 19.1919 8 24 8C28.8081 8 33.0758 8.68098 36.0709 9.72276C37.5778 10.2469 38.6545 10.8254 39.3151 11.3686C39.9006 11.8501 39.9857 12.1489 39.998 12.236ZM4.95178 15.2312L21.4543 41.6973C22.6288 43.5809 25.3712 43.5809 26.5457 41.6973L43.0534 15.223C43.0709 15.1948 43.0878 15.1662 43.104 15.1371L41.3563 14.1648C43.104 15.1371 43.1038 15.1374 43.104 15.1371L43.1051 15.135L43.1065 15.1325L43.1101 15.1261L43.1199 15.1082C43.1276 15.094 43.1377 15.0754 43.1497 15.0527C43.1738 15.0075 43.2062 14.9455 43.244 14.8701C43.319 14.7208 43.4196 14.511 43.5217 14.2683C43.6901 13.8679 44 13.0689 44 12.2609C44 10.5573 43.003 9.22254 41.8558 8.2791C40.6947 7.32427 39.1354 6.55361 37.385 5.94477C33.8654 4.72057 29.133 4 24 4C18.867 4 14.1346 4.72057 10.615 5.94478C8.86463 6.55361 7.30529 7.32428 6.14419 8.27911C4.99695 9.22255 3.99999 10.5573 3.99999 12.2609C3.99999 13.1275 4.29264 13.9078 4.49321 14.3607C4.60375 14.6102 4.71348 14.8196 4.79687 14.9689C4.83898 15.0444 4.87547 15.1065 4.9035 15.1529C4.91754 15.1762 4.92954 15.1957 4.93916 15.2111L4.94662 15.223L4.95178 15.2312ZM35.9868 18.996L24 38.22L12.0131 18.996C12.4661 19.1391 12.9179 19.2658 13.3617 19.3718C16.4281 20.1039 20.0901 20.5217 24 20.5217C27.9099 20.5217 31.5719 20.1039 34.6383 19.3718C35.082 19.2658 35.5339 19.1391 35.9868 18.996Z" fill-rule="evenodd"></path>
+</svg>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">Real Estate</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-text-primary text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Propiedades</a>
+<a class="text-text-primary text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Agentes</a>
+<a class="text-text-primary text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Nosotros</a>
+<a class="text-text-primary text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Contacto</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors">
+<span class="truncate">Iniciar Sesión</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Registrarse</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 h-[500px]">
+<div class="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 rounded-xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Main view of a modern villa" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA72FF6XS3VbhDjry_edzvHZnMhitWtDCAzl2K6CibYYJgQDtuIrEHMgPJJUnkGJx5yvXw6FsoTv9_GPTmsZBdome8-JFhew_5FTDthI2ghifaJYIi2UivEkmJvrrvUF5YTIxZa4M5byjTY_lhl_ye7efIonv_TvrI5kWHredr8WkylDNRfGPpm-GjEeVytjxTH-DN28CKInL-yRmI-wvA4YuyNZ1Ahu6qyQuvnsDfTr07n_EuAsejfjgJuqtxWEuZUo8a8beOXIvBS");'></div>
+</div>
+<div class="rounded-xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Living room of the villa" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrjEUvEdbvM0VjW7y7DGLevMb3i8-LhCr51cFkV5oh85W52VB_UvwtHlD44LBBQ_AEHgKz9sBfulKvCQ4R3OHTli1UUPio1UnIEfg2Gl-u46Qg6RtmPPu0McZcicFDDeutxJ3zmzxTXWPeEx-39BFDCG2pE47TCWUsCe06doRPt03SZI2ZqSl2lrTgWP27jymh8ja1MuLtl2_e4RalH-7jjQnjrnhb8U8zelJZ82FP45kEgREbzg1mnHZ3NmhqJABmPdFQjyZAMllC");'></div>
+</div>
+<div class="rounded-xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Kitchen of the villa" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCl4oqRZim7LU0kpW3wNFmg8c2in9m9tBo8M9XXAvWtINXQgQde9PFCxn9SLy74R-9R6fv1pZIZsUPAC3n6HHYmhHX9EhZ0BrEbf69NE5AuZgkF_yyFijsL9Yu-4KQPTTouuPDJ4JuuWGd9H-ZQi8I3IYkGI8ZmTTNC7wJDIxxg8LWT2vUHCb9h4H5DU2o4KWKc6s6Hy-mmHY_bSR4FprRvfwNfNhKXIiCCwzLalr-RJ0WJsmwjwaLDbTz2Iz3gqSGZo8e_65BaCXZg");'></div>
+</div>
+<div class="rounded-xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Swimming pool of the villa" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACPSPJagy2mHSkvIV1k2Wy0lEY2zguDYAx_8nhlTNCsHm_AbC34lSWr4e-hG_DY1Rhl-XU8vz_2v8gISKeIw7MgIE62lWdc9Kqtx5TCdHCrC-nKnDOVX3eyza3s_aD7wqQLmQq-fwMl1fyyoWOxg08jMRDL-ifq9L2u92225mrmIWf8KR_O2EE95ixzjMhDqilWD9TMBovm-pTEs6hnFnW1_6DitdR-OiqCKbf7L4x0scbCCdcutyF198yv20bgHP6POYeqNk5e6Va");'></div>
+</div>
+<div class="rounded-xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Backyard of the villa" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDvYtAmvN5LE3ZI30TAQBx2WYspt-YAMvuTtTs7ok_55sKz9zLBY-9MoXA-PAtUiZQz-z5Zdnjd8dqjTNW4rJWz9ZIqcqpg-tM9LM6pSkk8hQwA-RJK6DHYfshcPpE3sci_q60t2Z2uuz6Vo_LKkuTXCt3EdXgh-eZDJ8S4_wLdYYH8dj9klMYTlP9EYCUNwecyCqGc9no87yJVF0MS_5xRU-halbqEUHqMC9sYfCojmOOy9fJqQqFL_ZhMZ2Izyp2YKsbJGczMpra");'></div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+<div class="lg:col-span-2">
+<div class="flex flex-wrap justify-between items-start gap-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-text-primary text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">Villa espectacular en Palermo</h1>
+<p class="text-gray-500 text-lg font-normal leading-normal flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">location_on</span>
+                                    Palermo, Buenos Aires, Argentina
+                                </p>
+</div>
+<div class="flex-shrink-0">
+<span class="bg-accent/10 text-accent text-sm font-bold px-3 py-1.5 rounded-lg">Nuevo</span>
+</div>
+</div>
+<div class="mt-6">
+<h2 class="text-text-primary text-3xl font-bold">USD 15,000</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 border-t border-b border-border-light py-6">
+<div class="flex flex-col gap-1 items-center">
+<span class="material-symbols-outlined text-3xl text-primary">bed</span>
+<p class="text-text-primary text-sm font-medium">4 Dormitorios</p>
+</div>
+<div class="flex flex-col gap-1 items-center">
+<span class="material-symbols-outlined text-3xl text-primary">shower</span>
+<p class="text-text-primary text-sm font-medium">3 Baños</p>
+</div>
+<div class="flex flex-col gap-1 items-center">
+<span class="material-symbols-outlined text-3xl text-primary">square_foot</span>
+<p class="text-text-primary text-sm font-medium">2,500 Pies²</p>
+</div>
+<div class="flex flex-col gap-1 items-center">
+<span class="material-symbols-outlined text-3xl text-primary">grass</span>
+<p class="text-text-primary text-sm font-medium">5,000 Tamaño del terreno</p>
+</div>
+</div>
+<div class="mt-8">
+<div class="border-b border-border-light">
+<nav aria-label="Tabs" class="-mb-px flex space-x-8">
+<a class="border-primary text-primary whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" href="#">Descripción</a>
+<a class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" href="#">Características</a>
+<a class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" href="#">Ubicación</a>
+</nav>
+</div>
+<div class="py-6 space-y-4 text-gray-600 leading-relaxed">
+<p>Descubre esta magnífica villa ubicada en el exclusivo barrio de Las Condes. Esta propiedad combina lujo, comodidad y un diseño moderno, ofreciendo un estilo de vida único para ti y tu familia. Con interiores amplios y acabados de alta calidad, cada detalle ha sido cuidadosamente seleccionado para asegurar el máximo confort.</p>
+<p>La casa cuenta con una zona de estar y comedor de planta abierta, bañada de luz natural, que conecta con una gran terraza y un hermoso jardín con piscina privada. Es el escenario perfecto para recibir invitados o disfrutar de tranquilos momentos en familia. La cocina de última generación está completamente equipada con electrodomésticos de alta gama, ideal para los amantes de la gastronomía.</p>
+</div>
+<div class="py-6">
+<h3 class="text-xl font-bold text-text-primary mb-4">Características</h3>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">check_circle</span> 2 Pisos</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">check_circle</span> Jardín privado</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">check_circle</span> Piscina</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">check_circle</span> Orientación norte</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">check_circle</span> 3 Espacios de estacionamiento</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">check_circle</span> Construida en 2021</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">check_circle</span> Calefacción central</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">check_circle</span> Sistema de alarma</li>
+</ul>
+</div>
+<div class="py-6">
+<h3 class="text-xl font-bold text-text-primary mb-4">Ubicación</h3>
+<div class="w-full h-96 rounded-xl overflow-hidden border border-border-light">
+<img class="w-full h-full object-cover" data-alt="Barrio residencial" data-location="Palermo, Buenos Aires, Argentina" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIJbgNJUPDVMCMOLRCOurIjVITTqOtZGCFXVp_N6cPUfOAt7aL205ujvCdYllHXkUU8pdsuptb9jKHG8GeFWXWucGe-2Ljsc7q_rPhKKoqrw7mjHKnviW1YBRqzzYkNR7EUp6oUQkfvyUrswKEFyVGl-eqYzoMTQ5C_E7vbox26M0SWL_xg23PlMUrEjT-cFlRllV6ZNQ8IqKrOosAOnuJWAM_gVNUWiZ2u7883t4s5yvs2DJ6cTGlxYGmqYAk4I4mTHTx52QxgpjG"/>
+</div>
+</div>
+</div>
+</div>
+<aside class="lg:col-span-1">
+<div class="sticky top-24">
+<div class="border border-border-light rounded-xl p-6">
+<div class="flex items-center gap-4">
+<div class="size-16 rounded-full bg-center bg-no-repeat bg-cover" data-alt="Photo of Jane Doe, Real Estate Agent" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqc8Xh_i7GQrYuz1meqoEoaAXs3__1DL2KgQkuPzhkVvpT7Lgb5BMU7MYVoTnemni4t0DKcnpGd5LYuH0FKL4QXhJTxSJ394p417N-REd7lf_6TpSfVVVVj71uoiP7mt1X1OQy8NjUsrdwtSUvAMVjygZaqCifYXUBdpV_KPw8v_15obA_zGPQlxZE4V1yC8WlPzMhBVe6fYu7GOv9rOMRuBo_8n230PnNE56x4YDiXzsalYS9mFuxUVIbyxe3CGkdlk5a5i8Wm9TS");'></div>
+<div>
+<h3 class="text-lg font-bold text-text-primary">Jane Doe</h3>
+<p class="text-sm text-gray-500">Real Estate Agent</p>
+</div>
+</div>
+<div class="mt-6 flex flex-col gap-3">
+<button class="w-full flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold hover:bg-primary/90 transition-colors">Solicitar visita</button>
+<button class="w/full flex items-center justify-center rounded-lg h-12 px-6 border border-border-light bg-background-light text-text-primary text-base font-bold hover:bg-gray-50 transition-colors">Contactar agente</button>
+</div>
+<div class="mt-6 flex justify-center gap-6">
+<button class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite_border</span>
+<span class="text-sm font-medium">Guardar</span>
+</button>
+<button class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">share</span>
+<span class="text-sm font-medium">Compartir</span>
+</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<section class="mt-16">
+<h2 class="text-2xl font-bold text-text-primary mb-6">Propiedades similares</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="border border-border-light rounded-xl overflow-hidden group">
+<div class="h-56 bg-cover bg-center" data-alt="Modern house with a car" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGwhKzcFKOGVKXglnf7_FvF4y0zBUowc96ImQlYcgtBp1y-bkrYYA7bwmNiypw_qHlKYAsl-EZyYl_R70cwmcGyILo1lh20fhYBnrq53mtUOCdSQfbvL77cJKbpwCd9mgJO4dkLHfdXS1iEHNVvrxEg37eUFGki0Ae7wQGH32uBSBiGZpHwe8shjEiG6aYAZRc3VKUHyLYscxUjHGOFphQ2SeklsnLbdiDSyx5u3S179v9BQRV0WlEff6a4bYbwWDT6OFW5OZ-q5qx')"></div>
+<div class="p-4">
+<h3 class="text-lg font-bold text-text-primary">Casa moderna en Palermo</h3>
+<p class="text-sm text-gray-500 mt-1">Palermo, Buenos Aires</p>
+<p class="text-lg font-bold text-primary mt-2">USD 14,500</p>
+<div class="flex justify-between text-sm text-gray-600 mt-4 border-t border-border-light pt-3">
+<span>3 Hab.</span>
+<span>2 Baños</span>
+<span>200 m²</span>
+</div>
+</div>
+</div>
+<div class="border border-border-light rounded-xl overflow-hidden group">
+<div class="h-56 bg-cover bg-center" data-alt="Cozy suburban home" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAC4TbAj8YSOkiRnkkafxAppmAMw9Z3RJDR6fr3U1wVSqOFxeGfXEVtfPfEmmGs_kV2Rse1BrwaRPZ-V2c4wzU0pB6qCfJcmvSnxSLyujzDtgq5GfeH2Tz935jzAS1PCHU_uNlG3BpBi23cbpjbqufQDwUaFjGLGHQAo76ib9DAd46uJ0rUVYDsZE3VMNo6BbBwZRKqJrX4NJZURp-MQBnpVciGGqNVlNQKR6wOwf5rJ8x3fG1OjaaVpO_wy4phMC12qt_Qk5Du_Uid')"></div>
+<div class="p-4">
+<h3 class="text-lg font-bold text-text-primary">Cozy Home in Lo Barnechea</h3>
+<p class="text-sm text-gray-500 mt-1">Lo Barnechea, Santiago</p>
+<p class="text-lg font-bold text-primary mt-2">USD 16,000</p>
+<div class="flex justify-between text-sm text-gray-600 mt-4 border-t border-border-light pt-3">
+<span>4 Beds</span>
+<span>4 Baths</span>
+<span>2,800 Sqft</span>
+</div>
+</div>
+</div>
+<div class="border border-border-light rounded-xl overflow-hidden group">
+<div class="h-56 bg-cover bg-center" data-alt="Bright interior of a luxury apartment" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiph6UoGnLJeXhKU7-i2O2FFqPYWkBIBFY5MHRiKEotfABpKDBrsabLGhHcmiYUPd3_Fi03OGbMZMSxOnL309bOyCjANGxNayEZVnpQPtSF4UJjuGxwMt0lTsmZokzbjTpSsYx_9XOQMLOFla8KtsUvR2GCnol8oYXljOPZtUpesliFyYABjjrQQGIaIA-7gLvmAovb1V5zGbZTFPIBkcUYiwxsxpaOIYMwPd9tWKkHSezRoLyIaHuSCEjfqYFvDf0Kn21T8hbLiFO')"></div>
+<div class="p-4">
+<h3 class="text-lg font-bold text-text-primary">Casa frente al mar en Pinamar</h3>
+<p class="text-sm text-gray-500 mt-1">Pinamar, Buenos Aires</p>
+<p class="text-lg font-bold text-primary mt-2">USD 250,000</p>
+<div class="flex justify-between text-sm text-gray-600 mt-4 border-t border-border-light pt-3">
+<span>4 Hab.</span>
+<span>2 Baños</span>
+<span>185 m²</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+</body></html>
