@@ -215,18 +215,22 @@ export default function HomePage() {
             </Card>
 
             <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
-              <div className="aspect-video bg-gradient-to-br from-purple-400 to-pink-500 relative overflow-hidden">
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                <div className="absolute bottom-4 left-4 text-white">
-                  <Users className="h-8 w-8 mb-2" />
-                </div>
-              </div>
-              <CardHeader>
-                <CardTitle>App Móvil Corporativa</CardTitle>
-                <CardDescription>
-                  Aplicación móvil para gestión de equipos y comunicación interna empresarial.
-                </CardDescription>
-              </CardHeader>
+              <Link href="https://sat-rho.vercel.app/landing" target="_blank" className="group block">
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
+                  <div className="aspect-video bg-gradient-to-br from-purple-400 to-pink-500 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <Users className="h-8 w-8 mb-2" />
+                    </div>
+                  </div>
+                  <CardHeader>
+                    <CardTitle>App web para Seguridad e Higiene</CardTitle>
+                    <CardDescription>
+                      Aplicación web para gestión de equipos y reportes en el negocio de la seguridad e higiene.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
             </Card>
 
              <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">

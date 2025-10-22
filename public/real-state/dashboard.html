@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Real Estate - Dashboard Gerencial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00A7B5",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="w-64 bg-background-light dark:bg-background-dark border-r border-[#e7f1f3] dark:border-gray-700 flex flex-col p-4">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 bg-primary flex items-center justify-center">
+<span class="text-white font-bold">RE</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#0d191b] dark:text-white text-base font-medium leading-normal">Real Estate</h1>
+<p class="text-[#4c8d9a] dark:text-gray-400 text-sm font-normal leading-normal">Plataforma de Gestión</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20" href="#">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-white">dashboard</span>
+<p class="text-[#0d191b] dark:text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10" href="buscador-propiedades.html">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-gray-300">search</span>
+<p class="text-[#0d191b] dark:text-gray-300 text-sm font-medium leading-normal">Buscador</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10" href="#">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-gray-300">apartment</span>
+<p class="text-[#0d191b] dark:text-gray-300 text-sm font-medium leading-normal">Propiedades</p>
+</a>
+<!-- <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10" href="#">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-gray-300">business</span>
+<p class="text-[#0d191b] dark:text-gray-300 text-sm font-medium leading-normal">Inmobiliarias</p>
+</a> -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10" href="portal-locador.html">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-gray-300">person</span>
+<p class="text-[#0d191b] dark:text-gray-300 text-sm font-medium leading-normal">Portal Locador</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10" href="portal-locatario.html">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-gray-300">people</span>
+<p class="text-[#0d191b] dark:text-gray-300 text-sm font-medium leading-normal">Portal Locatario</p>
+</a>
+<!-- <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10" href="#">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-gray-300">payments</span>
+<p class="text-[#0d191b] dark:text-gray-300 text-sm font-medium leading-normal">Finanzas</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10" href="#">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-gray-300">assessment</span>
+<p class="text-[#0d191b] dark:text-gray-300 text-sm font-medium leading-normal">Reportes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10" href="#">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-gray-300">settings</span>
+<p class="text-[#0d191b] dark:text-gray-300 text-sm font-medium leading-normal">Configuración</p>
+</a> -->
+</nav>
+<div class="flex flex-col gap-4 mt-auto">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Nueva Propiedad</span>
+</button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-primary/10 rounded-lg" href="home.html">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-gray-300">home</span>
+<p class="text-[#0d191b] dark:text-gray-300 text-sm font-medium leading-normal">Inicio</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[#0d191b] dark:text-gray-300">logout</span>
+<p class="text-[#0d191b] dark:text-gray-300 text-sm font-medium leading-normal">Salir</p>
+</a>
+</div>
+</div>
+</aside>
+
+<!-- Main Content -->
+<main class="flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e7f1f3] dark:border-gray-700 px-10 py-3 bg-background-light dark:bg-background-dark">
+<div class="flex items-center gap-8">
+<h2 class="text-[#0d191b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Dashboard Gerencial</h2>
+</div>
+<div class="flex items-center gap-4">
+<label class="relative flex items-center min-w-40 max-w-64">
+<span class="material-symbols-outlined absolute left-3 text-[#4c8d9a] dark:text-gray-400">search</span>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d191b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-[#e7f1f3] dark:bg-gray-800 h-10 placeholder:text-[#4c8d9a] dark:placeholder:text-gray-400 px-4 pl-10 text-base font-normal leading-normal" placeholder="Buscar" value=""/>
+</label>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[#e7f1f3] dark:bg-gray-800 text-[#0d191b] dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 bg-primary flex items-center justify-center">
+<span class="text-white font-bold">U</span>
+</div>
+</div>
+</header>
+
+<div class="p-6 lg:p-10">
+<!-- Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#cfe3e7] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#0d191b] dark:text-gray-300 text-base font-medium leading-normal">Propiedades Gestionadas</p>
+<p class="text-[#0d191b] dark:text-white tracking-light text-3xl font-bold leading-tight">1,250</p>
+<p class="text-green-500 text-sm font-medium leading-normal">+5% vs mes anterior</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#cfe3e7] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#0d191b] dark:text-gray-300 text-base font-medium leading-normal">Inmobiliarias Activas</p>
+<p class="text-[#0d191b] dark:text-white tracking-light text-3xl font-bold leading-tight">85</p>
+<p class="text-green-500 text-sm font-medium leading-normal">+2 nuevas este mes</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#cfe3e7] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#0d191b] dark:text-gray-300 text-base font-medium leading-normal">Contratos Totales</p>
+<p class="text-[#0d191b] dark:text-white tracking-light text-3xl font-bold leading-tight">3,200</p>
+<p class="text-green-500 text-sm font-medium leading-normal">+8% vs mes anterior</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#cfe3e7] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#0d191b] dark:text-gray-300 text-base font-medium leading-normal">Ingresos Mensuales</p>
+<p class="text-[#0d191b] dark:text-white tracking-light text-3xl font-bold leading-tight">USD 45,000</p>
+<p class="text-green-500 text-sm font-medium leading-normal">+12% vs mes anterior</p>
+</div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Charts -->
+<div class="lg:col-span-2 flex flex-col gap-2 rounded-xl border border-[#cfe3e7] dark:border-gray-700 p-6 bg-white dark:bg-gray-800">
+<p class="text-[#0d191b] dark:text-white text-base font-medium leading-normal">Proyección de Honorarios (Próximos 6 Meses)</p>
+<p class="text-[#0d191b] dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">USD 270,000</p>
+<div class="flex gap-2 items-center">
+<p class="text-[#4c8d9a] dark:text-gray-400 text-sm font-normal leading-normal">Basado en contratos actuales</p>
+<span class="text-green-500 text-sm font-medium leading-normal flex items-center gap-1"><span class="material-symbols-outlined text-base">trending_up</span>+15%</span>
+</div>
+<div class="flex-1 mt-4">
+<svg fill="none" height="150" preserveaspectratio="none" viewbox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_chart" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#00A7B5" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#00A7B5" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint0_linear_chart)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#00A7B5" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="flex justify-around mt-2">
+<p class="text-[#4c8d9a] dark:text-gray-400 text-[13px] font-bold">Ene</p>
+<p class="text-[#4c8d9a] dark:text-gray-400 text-[13px] font-bold">Feb</p>
+<p class="text-[#4c8d9a] dark:text-gray-400 text-[13px] font-bold">Mar</p>
+<p class="text-[#4c8d9a] dark:text-gray-400 text-[13px] font-bold">Abr</p>
+<p class="text-[#4c8d9a] dark:text-gray-400 text-[13px] font-bold">May</p>
+<p class="text-[#4c8d9a] dark:text-gray-400 text-[13px] font-bold">Jun</p>
+</div>
+</div>
+</div>
+
+<!-- Alerts and Reminders -->
+<div class="flex flex-col gap-4">
+<div class="rounded-xl border border-[#cfe3e7] dark:border-gray-700 p-6 bg-white dark:bg-gray-800">
+<h2 class="text-[#0d191b] dark:text-white text-base font-bold leading-tight tracking-[-0.015em] mb-4">Pagos Pendientes</h2>
+<div class="flex flex-col items-center justify-center gap-3">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<path class="text-gray-200 dark:text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-green-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="75, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-xl font-bold text-[#0d191b] dark:text-white">75%</span>
+<span class="text-xs text-[#4c8d9a] dark:text-gray-400">Pagado</span>
+</div>
+</div>
+<p class="text-[#0d191b] dark:text-white text-lg font-bold">Total Pendiente: <span class="text-red-500">USD 11,250</span></p>
+</div>
+</div>
+
+<div class="rounded-xl border border-[#cfe3e7] dark:border-gray-700 p-6 bg-white dark:bg-gray-800 flex-1">
+<h2 class="text-[#0d191b] dark:text-white text-base font-bold leading-tight tracking-[-0.015em] mb-4">Alertas y Recordatorios</h2>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-amber-500 mt-0.5">warning</span>
+<div>
+<p class="text-[#0d191b] dark:text-white text-sm font-medium">Contrato para Dpto. 301 expira en 15 días.</p>
+<p class="text-[#4c8d9a] dark:text-gray-400 text-xs">Propiedad "Edificio Central"</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-red-500 mt-0.5">error</span>
+<div>
+<p class="text-[#0d191b] dark:text-white text-sm font-medium">Pago vencido para Inmobiliaria "Futuro Hogar".</p>
+<p class="text-[#4c8d9a] dark:text-gray-400 text-xs">Venció hace 3 días</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-500 mt-0.5">task_alt</span>
+<div>
+<p class="text-[#0d191b] dark:text-white text-sm font-medium">Revisión de documentos necesaria.</p>
+<p class="text-[#4c8d9a] dark:text-gray-400 text-xs">Propiedad "Oficina Plaza"</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>

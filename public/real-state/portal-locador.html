@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Real Estate - Portal Locador</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00A7B5",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#101f22",
+                        "accent-green": "#28A745",
+                        "alert-red": "#DC3545",
+                        "text-primary": "#343A40",
+                        "text-secondary": "#6C757D",
+                        "border-color": "#DEE2E6",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary dark:text-white">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 bg-white dark:bg-gray-900/50 flex-shrink-0 border-r border-border-color dark:border-gray-700">
+<div class="flex flex-col h-full p-4">
+<div class="flex items-center gap-2 px-3 py-4">
+<div class="text-primary size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 12.236C39.9944 12.2537 39.9875 12.2845 39.9748 12.3294C39.9436 12.4399 39.8949 12.5741 39.8346 12.7175C39.8168 12.7597 39.7989 12.8007 39.7813 12.8398C38.5103 13.7113 35.9788 14.9393 33.7095 15.4811C30.9875 16.131 27.6413 16.5217 24 16.5217C20.3587 16.5217 17.0125 16.131 14.2905 15.4811C12.0012 14.9346 9.44505 13.6897 8.18538 12.8168C8.17384 12.7925 8.16216 12.767 8.15052 12.7408C8.09919 12.6249 8.05721 12.5114 8.02977 12.411C8.00356 12.3152 8.00039 12.2667 8.00004 12.2612C8.00004 12.261 8 12.2607 8.00004 12.2612C8.00004 12.2359 8.0104 11.9233 8.68485 11.3686C9.34546 10.8254 10.4222 10.2469 11.9291 9.72276C14.9242 8.68098 19.1919 8 24 8C28.8081 8 33.0758 8.68098 36.0709 9.72276C37.5778 10.2469 38.6545 10.8254 39.3151 11.3686C39.9006 11.8501 39.9857 12.1489 39.998 12.236ZM4.95178 15.2312L21.4543 41.6973C22.6288 43.5809 25.3712 43.5809 26.5457 41.6973L43.0534 15.223C43.0709 15.1948 43.0878 15.1662 43.104 15.1371L41.3563 14.1648C43.104 15.1371 43.1038 15.1374 43.104 15.1371L43.1051 15.135L43.1065 15.1325L43.1101 15.1261L43.1199 15.1082C43.1276 15.094 43.1377 15.0754 43.1497 15.0527C43.1738 15.0075 43.2062 14.9455 43.244 14.8701C43.319 14.7208 43.4196 14.511 43.5217 14.2683C43.6901 13.8679 44 13.0689 44 12.2609C44 10.5573 43.003 9.22254 41.8558 8.2791C40.6947 7.32427 39.1354 6.55361 37.385 5.94477C33.8654 4.72057 29.133 4 24 4C18.867 4 14.1346 4.72057 10.615 5.94478C8.86463 6.55361 7.30529 7.32428 6.14419 8.27911C4.99695 9.22255 3.99999 10.5573 3.99999 12.2609C3.99999 13.1275 4.29264 13.9078 4.49321 14.3607C4.60375 14.6102 4.71348 14.8196 4.79687 14.9689C4.83898 15.0444 4.87547 15.1065 4.9035 15.1529C4.91754 15.1762 4.92954 15.1957 4.93916 15.2111L4.94662 15.223L4.95178 15.2312ZM35.9868 18.996L24 38.22L12.0131 18.996C12.4661 19.1391 12.9179 19.2658 13.3617 19.3718C16.4281 20.1039 20.0901 20.5217 24 20.5217C27.9099 20.5217 31.5719 20.1039 34.6383 19.3718C35.082 19.2658 35.5339 19.1391 35.9868 18.996Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-text-primary dark:text-white text-xl font-bold">Real Estate</h2>
+</div>
+<div class="flex flex-col gap-4 mt-6">
+<h1 class="text-text-secondary dark:text-gray-400 text-sm font-semibold uppercase px-3">Portal Locador</h1>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary font-bold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-text-secondary dark:text-gray-300 font-medium" href="#">
+<span class="material-symbols-outlined">apartment</span>
+<p class="text-sm">Mis Propiedades</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-text-secondary dark:text-gray-300 font-medium" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<p class="text-sm">Cuenta Corriente</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-text-secondary dark:text-gray-300 font-medium" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<p class="text-sm">Rendiciones</p>
+</a>
+</div>
+</div>
+<div class="mt-auto">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-text-secondary dark:text-gray-300 font-medium" href="dashboard.html">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<p class="text-sm">Dashboard Admin</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-text-secondary dark:text-gray-300 font-medium" href="home.html">
+<span class="material-symbols-outlined">home</span>
+<p class="text-sm">Inicio</p>
+</a>
+</div>
+</div>
+</aside>
+
+<main class="flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-end whitespace-nowrap border-b border-solid border-border-color dark:border-gray-700 px-8 py-3 bg-white dark:bg-gray-900/50 sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-100 dark:bg-gray-800 text-text-secondary dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 bg-primary flex items-center justify-center">
+<span class="text-white font-bold">AG</span>
+</div>
+<div class="text-right">
+<p class="text-sm font-semibold text-text-primary dark:text-white">Alejandro G.</p>
+<p class="text-xs text-text-secondary dark:text-gray-400">Locador</p>
+</div>
+<button class="text-text-secondary dark:text-gray-400 hover:text-text-primary dark:hover:text-white">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</header>
+
+<div class="p-8">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+<p class="text-text-primary dark:text-white text-3xl font-bold tracking-tight">Bienvenido, Alejandro</p>
+</div>
+
+<!-- Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-border-color dark:border-gray-700">
+<p class="text-text-secondary dark:text-gray-400 text-base font-medium">Propiedades Totales</p>
+<p class="text-text-primary dark:text-white tracking-tight text-3xl font-bold">12</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-border-color dark:border-gray-700">
+<p class="text-text-secondary dark:text-gray-400 text-base font-medium">Ocupación</p>
+<p class="text-text-primary dark:text-white tracking-tight text-3xl font-bold">8/12</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-border-color dark:border-gray-700">
+<p class="text-text-secondary dark:text-gray-400 text-base font-medium">Saldo Actual</p>
+<p class="text-accent-green tracking-tight text-3xl font-bold">USD 12,345.67</p>
+</div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2">
+<!-- Financial Summary Chart -->
+<div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-border-color dark:border-gray-700 mb-6">
+<h2 class="text-text-primary dark:text-white text-lg font-bold mb-4">Resumen Financiero (Últimos 6 meses)</h2>
+<div class="h-64 flex items-end justify-between px-4">
+<!-- Placeholder for chart, using divs to represent bars -->
+<div class="flex flex-col items-center gap-2 w-1/6">
+<div class="w-8 bg-primary/20 rounded-t-md" style="height: 60%;">
+<div class="w-full bg-primary h-full" style="height: 80%;"></div>
+</div>
+<span class="text-xs text-text-secondary dark:text-gray-400">Ene</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-1/6">
+<div class="w-8 bg-primary/20 rounded-t-md" style="height: 80%;">
+<div class="w-full bg-primary h-full" style="height: 70%;"></div>
+</div>
+<span class="text-xs text-text-secondary dark:text-gray-400">Feb</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-1/6">
+<div class="w-8 bg-primary/20 rounded-t-md" style="height: 50%;">
+<div class="w-full bg-primary h-full" style="height: 90%;"></div>
+</div>
+<span class="text-xs text-text-secondary dark:text-gray-400">Mar</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-1/6">
+<div class="w-8 bg-primary/20 rounded-t-md" style="height: 90%;">
+<div class="w-full bg-primary h-full" style="height: 95%;"></div>
+</div>
+<span class="text-xs text-text-secondary dark:text-gray-400">Abr</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-1/6">
+<div class="w-8 bg-primary/20 rounded-t-md" style="height: 75%;">
+<div class="w-full bg-primary h-full" style="height: 60%;"></div>
+</div>
+<span class="text-xs text-text-secondary dark:text-gray-400">May</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-1/6">
+<div class="w-8 bg-primary/20 rounded-t-md" style="height: 85%;">
+<div class="w-full bg-primary h-full" style="height: 85%;"></div>
+</div>
+<span class="text-xs text-text-secondary dark:text-gray-400">Jun</span>
+</div>
+</div>
+</div>
+
+<!-- Last Settlements Table -->
+<div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-border-color dark:border-gray-700">
+<h2 class="text-text-primary dark:text-white text-lg font-bold mb-4">Últimas Rendiciones</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-border-color dark:border-gray-700">
+<tr>
+<th class="py-2 px-4 text-sm font-semibold text-text-secondary dark:text-gray-400">Período</th>
+<th class="py-2 px-4 text-sm font-semibold text-text-secondary dark:text-gray-400">Monto Total</th>
+<th class="py-2 px-4 text-sm font-semibold text-text-secondary dark:text-gray-400">Fecha de Emisión</th>
+<th class="py-2 px-4 text-sm font-semibold text-text-secondary dark:text-gray-400 text-center">Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-border-color dark:border-gray-700">
+<td class="py-3 px-4 text-sm text-text-primary dark:text-white">Junio 2024</td>
+<td class="py-3 px-4 text-sm text-text-primary dark:text-white">USD 2,500.00</td>
+<td class="py-3 px-4 text-sm text-text-primary dark:text-white">05/07/2024</td>
+<td class="py-3 px-4 text-center">
+<button class="text-primary hover:text-primary/80"><span class="material-symbols-outlined">download_for_offline</span></button>
+</td>
+</tr>
+<tr class="border-b border-border-color dark:border-gray-700">
+<td class="py-3 px-4 text-sm text-text-primary dark:text-white">Mayo 2024</td>
+<td class="py-3 px-4 text-sm text-text-primary dark:text-white">USD 2,450.50</td>
+<td class="py-3 px-4 text-sm text-text-primary dark:text-white">05/06/2024</td>
+<td class="py-3 px-4 text-center">
+<button class="text-primary hover:text-primary/80"><span class="material-symbols-outlined">download_for_offline</span></button>
+</td>
+</tr>
+<tr>
+<td class="py-3 px-4 text-sm text-text-primary dark:text-white">Abril 2024</td>
+<td class="py-3 px-4 text-sm text-text-primary dark:text-white">USD 2,550.00</td>
+<td class="py-3 px-4 text-sm text-text-primary dark:text-white">05/05/2024</td>
+<td class="py-3 px-4 text-center">
+<button class="text-primary hover:text-primary/80"><span class="material-symbols-outlined">download_for_offline</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div class="lg:col-span-1">
+<!-- Alerts Section -->
+<div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-border-color dark:border-gray-700">
+<h2 class="text-text-primary dark:text-white text-lg font-bold mb-4">Alertas y Notificaciones</h2>
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-4 p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-alert-red/50">
+<span class="material-symbols-outlined text-alert-red mt-1">error</span>
+<div>
+<p class="font-semibold text-sm text-alert-red">Pago pendiente</p>
+<p class="text-xs text-text-secondary dark:text-gray-400">El pago del inquilino de Av. Siempreviva 742 está atrasado 5 días.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-lg bg-orange-50 dark:bg-orange-900/20 border border-orange-500/50">
+<span class="material-symbols-outlined text-orange-500 mt-1">warning</span>
+<div>
+<p class="font-semibold text-sm text-orange-600 dark:text-orange-400">Contrato por vencer</p>
+<p class="text-xs text-text-secondary dark:text-gray-400">El contrato de alquiler de C. Falsa 123 vence en 28 días.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-500/50">
+<span class="material-symbols-outlined text-blue-500 mt-1">home_repair_service</span>
+<div>
+<p class="font-semibold text-sm text-blue-600 dark:text-blue-400">Mantenimiento</p>
+<p class="text-xs text-text-secondary dark:text-gray-400">Mantenimiento programado para el 15/07 en P. Sherman 42.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- My Properties Section -->
+<div class="mt-8">
+<h2 class="text-text-primary dark:text-white text-xl font-bold mb-4">Mis Propiedades</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-border-color dark:border-gray-700">
+<img class="h-40 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzk59cTEDstb0f_6GgIxsI0_19oSVcDcVoIZ-jl-k3LAtuqpekhuPwVZGHEp5kekmWLboPgIIjE89KSrz12uPC-HRMn6iVuPzFwhq1Q0hxxOdoDKDQYxGtDFmIhHXYHde0prHKpgYCquQpv3wlIzI1xP-AWN7IVt0hoefFTvcrujX3jOP-2_Wd2XtF_IpaDsmqhvNIOjdkdP1e3u2RwvWNlyasS-K-OZAkzuNLv6mUO_D0YLRtpC-1tDM7J-oK_2OW5vf_ozl1LsAc"/>
+<div class="p-4">
+<p class="font-bold text-text-primary dark:text-white">Av. Siempreviva 742</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-block h-2 w-2 rounded-full bg-accent-green"></span>
+<p class="text-sm text-text-secondary dark:text-gray-400">Alquilada</p>
+</div>
+<a class="text-primary text-sm font-bold mt-3 inline-block hover:underline" href="detail-house.html">Ver Detalles →</a>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-border-color dark:border-gray-700">
+<img class="h-40 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3dCg9ZoNdKLXEChqNhX0yhIJoEZ8aVBBayuibiDocS0PD7CVLDSmXfNhpSEWeuXTs2qmOiS2nz60CWPqmSAInCdgdO_AgT0cDuKtsFvQFcbS-uPNuGhXtAtCLjorhW5zaXqT-gfm2IRaDutOcDYiE6LtGtqmkkaRdi9kc0c8KbgI8YTOW2yw1A05V8J0WPFCQLT-_WDwYPCgry0nYCuc3vk8Dpuhh4gna8ckXjJU46jXCgx3GW3SzK0Z4MnRql-w0Zztno9qIawSX"/>
+<div class="p-4">
+<p class="font-bold text-text-primary dark:text-white">C. Falsa 123</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-block h-2 w-2 rounded-full bg-gray-400"></span>
+<p class="text-sm text-text-secondary dark:text-gray-400">Vacante</p>
+</div>
+<a class="text-primary text-sm font-bold mt-3 inline-block hover:underline" href="detail-house.html">Ver Detalles →</a>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-border-color dark:border-gray-700">
+<img class="h-40 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLh857TST-XuqMdEy39uLKV2TGI82j_tCVyJM_cqquG8oxHronCNfoMVtJPOn-mr_Gl_oZpfiuoxhXYy4cCfna7hDWZJem_rtO5wqZpD7uiFzKnwawS3kFamUkcGv3bbS_qej-ziL9NXxWIAlQKfMBPJceZC5ai0UnMsYyjoQBKanTkJVhK68SXA18f-zZu77XYk8dhwrAiPcFKNOGIWUyVoDmqYvyZv6Os3lyxh0BYI9lDl5tPwrDJBU4n96yDKHjjehpJHk8__ul"/>
+<div class="p-4">
+<p class="font-bold text-text-primary dark:text-white">P. Sherman, 42</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-block h-2 w-2 rounded-full bg-accent-green"></span>
+<p class="text-sm text-text-secondary dark:text-gray-400">Alquilada</p>
+</div>
+<a class="text-primary text-sm font-bold mt-3 inline-block hover:underline" href="detail-house.html">Ver Detalles →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>
